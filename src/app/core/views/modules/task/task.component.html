@@ -1,0 +1,42 @@
+<div class="d-flex">
+
+  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light side-bare">
+    <a routerLink="/task/list"
+       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <i class="bi bi-card-checklist fs-1 me-2"></i>
+      <span class="fs-4">Tasks</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+
+      <li class="nav-item mb-2">
+        <a routerLink="/task/list"
+           class="nav-link active" aria-current="page">
+          <i class="bi bi-list me-2"></i>
+         List Tasks
+        </a>
+      </li>
+
+      <li class="nav-item mb-2">
+        <a routerLink="/user/tags"
+           class="nav-link active" aria-current="page">
+          <i class="bi bi-file-earmark-plus-fill me-2"></i>
+          Create Task
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="dropdown">
+      <a routerLink="/user/logout"
+         class="nav-link active  fs-5">
+        <i class="bi bi-box-arrow-left me-2"></i>
+        Logout
+      </a>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+</div>
+
