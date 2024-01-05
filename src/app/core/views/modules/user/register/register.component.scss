@@ -3,9 +3,28 @@
   margin-top: 3%;
   padding: 3%;
 
-  .form-group {
-    margin-bottom: .5rem !important;
+
+
+  .btn {
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    font-weight: bold;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+
+    &.login {
+      background: #f8f9fa;
+      color: #383d41;
+    }
   }
+
+  .form-group {
+    margin-bottom: 0.5rem !important;
+  }
+
   .register-left {
     text-align: center;
     color: #fff;
@@ -117,5 +136,4 @@
     margin-bottom: -15%;
     color: #495057;
   }
-
 }
