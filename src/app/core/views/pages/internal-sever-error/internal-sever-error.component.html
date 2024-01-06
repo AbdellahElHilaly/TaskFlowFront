@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-danger">{{ errorData?.message }}</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>Timestamp:</strong> {{ errorData?.timestamp }}</p>
+          <p><strong>Details:</strong></p>
+          <ul>
+            <li *ngFor="let detail of errorData?.details">{{ detail }}</li>
+          </ul>
+          <p><strong>Path:</strong> {{ errorData?.path }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
