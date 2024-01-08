@@ -20,8 +20,8 @@ export class UserProfileComponent implements OnInit {
 
   private loadUserProfile() {
     this.userService.getProfile().subscribe(
-      (users: Array<User>) => {
-        this.profile = users[0];
+      (user: User) => {
+        this.profile = user;
       },
       (error: any) => {
         console.error('Error fetching user profile', error);

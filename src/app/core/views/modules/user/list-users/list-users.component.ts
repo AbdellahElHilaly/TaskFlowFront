@@ -18,7 +18,7 @@ export class ListUsersComponent implements OnInit {
   }
 
   private loadUserProfile() {
-    this.userService.getProfile().subscribe(
+    this.userService.getUsers().subscribe(
       (users: Array<User>) => {
         this.users = users;
       },

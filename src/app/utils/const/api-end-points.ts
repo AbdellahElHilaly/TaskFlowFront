@@ -18,10 +18,9 @@ export class ApiEndPoints {
     this.logout = this.baseUrl + this.security + '/logout';
     this.refreshToken = this.baseUrl + this.security + '/refresh'
 
-    // this.users = this.baseUrl + '/users';
-    // this.profile = this.baseUrl +this.users+ '/me';
+    this.users = this.baseUrl + '/users';
 
-    this.users = this.baseUrl + this.security ;
+    // this.users = this.baseUrl + this.security ;
     this.profile = this.baseUrl +this.security ;
 
   }

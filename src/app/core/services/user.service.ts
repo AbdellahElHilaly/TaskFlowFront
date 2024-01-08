@@ -18,13 +18,16 @@ export class UserService {
   constructor(private http: HttpClient, private tokenService: TokenService, private refreshTokenService: RefreshTokenService) {
   }
 
-  public getProfile(): Observable<Array<User>> {
+  public getProfile(): Observable<User> {
     let jwtAccessToken = this.tokenService.getAccessToken();
     const tokenType = 'Bearer ';
     const header = new HttpHeaders().set('Authorization', tokenType + jwtAccessToken);
     const headers = {headers: header};
     console.log(headers);
-    return this.http.get<Array<User>>(this.profileUrl, headers);
+    return this.http.get<User>(this.profileUrl, headers);
   }
 
+  getUsers():Observable<Array<User>>  {
+    return this.http.get<Array<User>>(this.profileUrl);
+  }
 }
