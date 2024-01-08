@@ -11,8 +11,12 @@ import { TaskComponent } from './core/views/modules/task/task.component';
 import { TaskListComponent } from './core/views/modules/task/task-list/task-list.component';
 import { RegisterComponent } from './core/views/modules/user/register/register.component';
 import {CookieService} from "ngx-cookie-service";
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
-import {TokenInterceptor} from "./utils/interceptor/token.interceptor";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
+// import {TokenInterceptor} from "./utils/interceptor/token.interceptor";
+import {NgOptimizedImage} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { InternalSeverErrorComponent } from './core/views/pages/internal-sever-error/internal-sever-error.component';
+import { ValidationErrorComponent } from './core/views/pages/validation-error/validation-error.component';
 
 @NgModule({
   declarations: [
@@ -23,18 +27,25 @@ import {TokenInterceptor} from "./utils/interceptor/token.interceptor";
     UserComponent,
     TaskComponent,
     TaskListComponent,
-    RegisterComponent
+    RegisterComponent,
+    InternalSeverErrorComponent,
+    ValidationErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    NgOptimizedImage,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CookieService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: TokenInterceptor,
+    //   multi: true
+    // },
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })

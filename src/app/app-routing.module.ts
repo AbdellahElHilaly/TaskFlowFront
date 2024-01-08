@@ -7,6 +7,8 @@ import {UserProfileComponent} from "./core/views/modules/user/user-profile/user-
 import {TaskComponent} from "./core/views/modules/task/task.component";
 import {TaskListComponent} from "./core/views/modules/task/task-list/task-list.component";
 import {RegisterComponent} from "./core/views/modules/user/register/register.component";
+import {InternalSeverErrorComponent} from "./core/views/pages/internal-sever-error/internal-sever-error.component";
+import {ValidationErrorComponent} from "./core/views/pages/validation-error/validation-error.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -15,6 +17,7 @@ const routes: Routes = [
     path: 'user', component: UserComponent,
     children: [
       {path: 'profile', component: UserProfileComponent},
+      {path: '', redirectTo: 'profile', pathMatch: 'full'},
     ]
   },
   {
@@ -23,10 +26,15 @@ const routes: Routes = [
       {path: 'list', component: TaskListComponent},
     ]
   },
+  { path: 'internal-server-error', component: InternalSeverErrorComponent },
+  { path: 'validation-error', component: ValidationErrorComponent },
+
 
 
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: '**', component: NotFoundComponent}
+  {path: '**', component: NotFoundComponent},
+
+
 
 ];
 

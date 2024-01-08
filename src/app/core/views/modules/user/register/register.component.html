@@ -1,7 +1,7 @@
 <div class="container register">
   <div class="row">
     <div class="col-md-3 register-left">
-      <img src="../../assets/images/logo-register.png"  alt="register-logo" class="img-fluid"/>
+      <img src="../../assets/images/logo-register.png" alt="register-logo" class="img-fluid"/>
       <h3>Welcome</h3>
       <p>You are 30 seconds away from earning your own money!</p>
       <a routerLink="user/login" class="btn login">Login</a><br/>
@@ -10,28 +10,74 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <h3 class="register-heading">Register</h3>
-          <div class="row register-form">
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="First Name *" value=""/>
+
+          <form [formGroup]="userForm.formGroup" (ngSubmit)="register()">
+
+            <div class="row register-form">
+
+              <div class="col-md-6">
+
+                <div class="form-group">
+                  <input formControlName="firstName" type="text"
+                         [ngClass]="{ 'form-control': true, 'is-valid': userForm.firstName?.valid && userForm.firstName?.touched, 'is-invalid': userForm.firstName?.invalid && userForm.firstName?.touched }"
+                         placeholder="First Name *" value=""/>
+                  <div *ngIf="userForm.firstName?.invalid && userForm.firstName?.touched"
+                       class="invalid-feedback">
+                    {{ userForm.firstNameMessage }}
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input formControlName="lastName" type="text"
+                         [ngClass]="{ 'form-control': true, 'is-valid': userForm.lastName?.valid && userForm.lastName?.touched, 'is-invalid': userForm.lastName?.invalid && userForm.lastName?.touched }"
+                         placeholder="Last Name *" value=""/>
+                  <div *ngIf="userForm.lastName?.invalid && userForm.lastName?.touched"
+                       class="invalid-feedback">
+                    {{ userForm.lastNameMessage }}
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input formControlName="email" type="email"
+                         [ngClass]="{ 'form-control': true, 'is-valid': userForm.email?.valid &&  userForm.email?.touched, 'is-invalid': userForm.email?.invalid &&  userForm.email?.touched }"
+                         placeholder="Your Email *" value=""/>
+                  <div *ngIf=" userForm.email?.invalid &&  userForm.email?.touched"
+                       class="invalid-feedback">
+                    {{ userForm.emailMessage }}
+                  </div>
+                </div>
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Last Name *" value=""/>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Your Email *" value=""/>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input formControlName="password" type="password"
+                         [ngClass]="{ 'form-control': true, 'is-valid': userForm.password?.valid && userForm.password?.touched, 'is-invalid': userForm.password?.invalid && userForm.password?.touched }"
+                         placeholder="Password *" value=""/>
+                  <div *ngIf="userForm.password?.invalid && userForm.password?.touched"
+                       class="invalid-feedback">
+                    {{ userForm.passwordMessage }}
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input formControlName="confirmPassword" type="password"
+                         [ngClass]="{ 'form-control': true, 'is-valid': userForm.confirmPassword?.valid && userForm.confirmPassword?.touched, 'is-invalid': userForm.confirmPassword?.invalid && userForm.confirmPassword?.touched }"
+                         placeholder="Confirm Password *" value=""/>
+                  <div *ngIf="userForm.confirmPassword?.invalid && userForm.confirmPassword?.touched"
+                       class="invalid-feedback">
+                    {{ userForm.confirmPasswordMessage }}
+                  </div>
+                </div>
+                <button class="btn btnRegister"  [disabled]="!userForm.formGroup.valid">
+                  {{ userForm.formGroup.invalid ? 'Invalid' : 'Register' }}
+                </button>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password *" value=""/>
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="Confirm Password *" value=""/>
-              </div>
-              <button class="btn btnRegister" (click)="register()">Register</button>
-            </div>
-          </div>
+
+
+          </form>
+
+
         </div>
       </div>
     </div>

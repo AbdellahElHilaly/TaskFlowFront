@@ -1,6 +1,6 @@
 <div class="d-flex">
-
-  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light side-bare">
+  <!-- Sidebar -->
+  <aside class="d-flex flex-column flex-shrink-0 p-3 bg-light side-bare">
     <a routerLink="/user/profile"
        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <i class="bi bi-person-circle  fs-2 me-2"></i>
@@ -8,7 +8,6 @@
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-
       <li class="nav-item mb-2">
         <a routerLink="/user/tasks"
            class="nav-link active" aria-current="page">
@@ -16,7 +15,6 @@
           My Tasks
         </a>
       </li>
-
       <li class="nav-item mb-2">
         <a routerLink="/user/tags"
            class="nav-link active" aria-current="page">
@@ -24,12 +22,7 @@
           My Tags
         </a>
       </li>
-
-
-
-
     </ul>
-
     <div class="dropdown">
       <a routerLink="/user/logout"
          class="nav-link active  fs-5">
@@ -37,10 +30,10 @@
         Logout
       </a>
     </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <div class="flex-grow-1">
+    <router-outlet></router-outlet>
   </div>
-
-  <router-outlet></router-outlet>
-
 </div>
-
-

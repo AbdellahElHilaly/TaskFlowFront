@@ -9,18 +9,22 @@ export class ApiEndPoints {
   public refreshToken: string;
 
   public users: string;
+  public profile: string;
 
 
   private constructor() {
-    this.login = this.baseUrl + this.security + '/login';
-    this.register = this.baseUrl + this.security + '/register';
+    this.login = this.baseUrl + this.security + '/signin';
+    this.register = this.baseUrl + this.security + '/signup';
     this.logout = this.baseUrl + this.security + '/logout';
     this.refreshToken = this.baseUrl + this.security + '/refresh'
 
-    this.users = this.baseUrl + '/users';
+    // this.users = this.baseUrl + '/users';
+    // this.profile = this.baseUrl +this.users+ '/me';
+
+    this.users = this.baseUrl + this.security ;
+    this.profile = this.baseUrl +this.security ;
 
   }
-
 
   public static getInstance(): ApiEndPoints {
     if (!ApiEndPoints.instance) {

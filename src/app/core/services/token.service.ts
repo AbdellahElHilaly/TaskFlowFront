@@ -12,6 +12,7 @@ export class TokenService {
   constructor(private cookieService: CookieService) { }
 
   public saveAccessToken(token: string): void {
+    this.cookieService.delete(this.ACCESS_TOKEN_KEY)
     this.cookieService.set(this.ACCESS_TOKEN_KEY, token);
   }
 
@@ -20,6 +21,7 @@ export class TokenService {
   }
 
   public saveRefreshToken(token: string): void {
+    this.cookieService.delete(this.REFRESH_TOKEN_KEY)
     this.cookieService.set(this.REFRESH_TOKEN_KEY, token);
   }
 

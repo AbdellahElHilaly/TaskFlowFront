@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {RefreshTokenService} from "../../../services/refresh-token.service";
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(private refreshTokenService: RefreshTokenService) {
+    this.refreshTokenService.refresh();
+  }
+
 }
+
+
