@@ -13,6 +13,7 @@ import { RegisterComponent } from './core/views/modules/user/register/register.c
 import {CookieService} from "ngx-cookie-service";
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 // import {TokenInterceptor} from "./utils/interceptor/token.interceptor";
+import { StoreModule } from '@ngrx/store';
 import {NgOptimizedImage} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { InternalSeverErrorComponent } from './core/views/pages/internal-sever-error/internal-sever-error.component';
@@ -34,6 +35,7 @@ import { ListUsersComponent } from './core/views/modules/user/list-users/list-us
     ListUsersComponent
   ],
   imports: [
+    StoreModule.forRoot({ users: userReducer }),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
