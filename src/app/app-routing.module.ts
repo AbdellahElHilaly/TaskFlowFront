@@ -9,10 +9,12 @@ import {TaskListComponent} from "./core/views/modules/task/task-list/task-list.c
 import {RegisterComponent} from "./core/views/modules/user/register/register.component";
 import {InternalSeverErrorComponent} from "./core/views/pages/internal-sever-error/internal-sever-error.component";
 import {ValidationErrorComponent} from "./core/views/pages/validation-error/validation-error.component";
+import {ListUsersComponent} from "./core/views/modules/user/list-users/list-users.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'users', component: ListUsersComponent},
   {
     path: 'user', component: UserComponent,
     children: [

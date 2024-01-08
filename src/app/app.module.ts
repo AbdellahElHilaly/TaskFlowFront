@@ -17,6 +17,7 @@ import {NgOptimizedImage} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { InternalSeverErrorComponent } from './core/views/pages/internal-sever-error/internal-sever-error.component';
 import { ValidationErrorComponent } from './core/views/pages/validation-error/validation-error.component';
+import { ListUsersComponent } from './core/views/modules/user/list-users/list-users.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ValidationErrorComponent } from './core/views/pages/validation-error/va
     TaskListComponent,
     RegisterComponent,
     InternalSeverErrorComponent,
-    ValidationErrorComponent
+    ValidationErrorComponent,
+    ListUsersComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,6 @@ import {User} from "../models/interfaces/user";
 import {Observable} from "rxjs";
 import {TokenService} from "./token.service";
 import {RefreshTokenService} from "./refresh-token.service";
-import {Token} from "../models/interfaces/token";
 
 
 @Injectable({
@@ -24,7 +23,8 @@ export class UserService {
     const tokenType = 'Bearer ';
     const header = new HttpHeaders().set('Authorization', tokenType + jwtAccessToken);
     const headers = {headers: header};
-    return this.http.get<Array<User>>(this.profileUrl);
+    console.log(headers);
+    return this.http.get<Array<User>>(this.profileUrl, headers);
   }
 
 }
