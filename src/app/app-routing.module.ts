@@ -10,11 +10,16 @@ import {RegisterComponent} from "./core/views/modules/user/register/register.com
 import {InternalSeverErrorComponent} from "./core/views/pages/internal-sever-error/internal-sever-error.component";
 import {ValidationErrorComponent} from "./core/views/pages/validation-error/validation-error.component";
 import {ListUsersComponent} from "./core/views/modules/user/list-users/list-users.component";
+import {CounterComponent} from "./core/views/shared/widgets/counter/counter.component";
+import {AddTaskComponent} from "@app/core/views/modules/task/add-task/add-task.component";
+import {RxjsComponent} from "@app/core/views/modules/docs/rxjs/rxjs.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'users', component: ListUsersComponent},
+  {path: 'state/counter', component: CounterComponent},
+  {path: 'docs/rxjs', component: RxjsComponent},
   {
     path: 'user', component: UserComponent,
     children: [
@@ -26,6 +31,7 @@ const routes: Routes = [
     path: 'task', component: TaskComponent,
     children: [
       {path: 'list', component: TaskListComponent},
+      {path: 'add', component: AddTaskComponent},
     ]
   },
   { path: 'internal-server-error', component: InternalSeverErrorComponent },

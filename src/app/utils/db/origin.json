@@ -1,0 +1,27 @@
+{
+  "tasks": [
+    { "id": "1", "userId": "1", "title": "Préparer le rapport de fin d'année", "completed": false },
+
+    { "id": "2", "userId": "1", "title": "Envoyer les documents au client", "completed": false },
+
+    { "id": "3", "userId": "2", "title": "Organiser une réunion d'équipe", "completed": false },
+
+    { "id": "4", "userId": "3", "title": "Finaliser le rapport financier", "completed": false },
+
+    { "id": "5", "userId": "2", "title": "Préparer une présentation pour la conférence", "completed": false },
+
+    { "id": "6", "userId": "1", "title": "Mettre à jour le site web de l'entreprise", "completed": false },
+
+    { "id": "7", "userId": "3", "title": "Planifier le budget marketing pour le prochain trimestre", "completed": false },
+
+    { "id": "8", "userId": "1", "title": "Réviser le manuel de formation des nouveaux employés", "completed": false },
+
+    { "id": "9", "userId": "2", "title": "Analyser les retours clients du dernier produit", "completed": false },
+
+    { "id": "10", "userId": "3", "title": "Coordonner avec le fournisseur pour la livraison des matériaux", "completed": false },
+
+    { "id": "11", "userId": "1", "title": "Valider la mise à jour de sécurité du logiciel", "completed": false },
+
+    { "id": "12", "userId": "2", "title": "Organiser une session de formation sur la gestion du temps", "completed": false }
+  ]
+}

@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div class="row d-flex justify-content-between align-items-center">
+    <div class="col-8">
+      <h1 class="text-center">Counter <strong class="text-danger">{{ counter?.count | number }}</strong></h1>
+    </div>
+
+    <div class="col-4 d-flex flex-column align-items-end">
+      <button class="btn btn-primary m-3" (click)="add()">Increment</button>
+      <button class="btn btn-primary m-3" (click)="sub()">Decrement</button>
+      <button class="btn btn-primary m-3" (click)="reset()">Reset</button>
+      <button class="btn btn-primary m-3" (click)="addRandom()">Add Random</button>
+    </div>
+  </div>
+</div>
+
+

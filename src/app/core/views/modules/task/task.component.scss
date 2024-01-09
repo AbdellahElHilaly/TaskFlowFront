@@ -2,3 +2,9 @@
   height: 92vh;
   width: 15%;
 }
+
+.content{
+  max-height: 92vh;
+  width: 85%;
+  overflow-y: scroll;
+}
