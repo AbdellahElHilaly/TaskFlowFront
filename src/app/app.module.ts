@@ -26,6 +26,7 @@ import {TaskEffect} from "@app/state/task/task.effect";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import { AddTaskComponent } from './core/views/modules/task/add-task/add-task.component';
 import { RxjsComponent } from './core/views/modules/docs/rxjs/rxjs.component';
+import { ChatHeadComponent } from './core/views/shared/widgets/chat-head/chat-head.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { RxjsComponent } from './core/views/modules/docs/rxjs/rxjs.component';
     ListUsersComponent,
     CounterComponent,
     AddTaskComponent,
-    RxjsComponent
+    RxjsComponent,
+    ChatHeadComponent
   ],
   imports: [
     BrowserModule,
@@ -51,15 +53,16 @@ import { RxjsComponent } from './core/views/modules/docs/rxjs/rxjs.component';
     NgOptimizedImage,
     FormsModule,
     ReactiveFormsModule,
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-    }),
+
     StoreModule.forRoot(
       {
         counter: counterReducer,
         task: taskReducer
       },
       {}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+    }),
     EffectsModule.forRoot([TaskEffect])
   ],
   providers: [

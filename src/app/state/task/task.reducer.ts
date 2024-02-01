@@ -14,6 +14,7 @@ export const taskReducer = createReducer(
       error: null,
     };
   }),
+
   on(TaskActions.getTasksFailure, (state: TaskStore, {error}) => {
     return {
       ...state,
@@ -30,14 +31,13 @@ export const taskReducer = createReducer(
       error: null,
     };
   }),
+
   on(TaskActions.deleteTaskFailure, (state: TaskStore, {error}) => {
     return {
       ...state,
       error: error,
     };
   }),
-
-
 
 
   on(TaskActions.addTaskSuccess, (state: TaskStore, {task}) => {
@@ -47,10 +47,12 @@ export const taskReducer = createReducer(
       error: null,
     };
   }),
+
   on(TaskActions.addTaskFailure, (state: TaskStore, {error}) => {
     return {
       ...state,
       error: error,
     };
   }),
+
 );

@@ -23,12 +23,8 @@ export class TaskListComponent implements OnInit {
     this.store.dispatch(loadTasks());
   }
 
-  createTask() {
-    // Implement logic for creating a task
-  }
 
   editTask(id: number) {
-    // Implement logic for editing a task
   }
 
   deleteTask(id: number) {
@@ -37,6 +33,6 @@ export class TaskListComponent implements OnInit {
   }
 
   viewTask(id: number) {
-    
+
   }
 }
